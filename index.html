@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy Sấy Lạnh</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        header {
+            background: #b30000;
+            padding: 20px;
+            color: white;
+        }
+        .menu {
+            background: #d32f2f;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        .menu li {
+            position: relative;
+            padding: 15px 20px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            background: #d32f2f;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+        .menu li:hover {
+            background: #b71c1c;
+        }
+        .submenu {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background: #fff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            z-index: 1000;
+            min-width: 200px;
+        }
+        .submenu li {
+            padding: 10px;
+            background: white;
+            border-bottom: 1px solid #ddd;
+        }
+        .submenu li:last-child {
+            border-bottom: none;
+        }
+        .submenu li a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+        }
+        .submenu li:hover {
+            background: #f1c0c0;
+        }
+        .content {
+            padding: 20px;
+            background: white;
+            margin: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .hidden {
+            display: none;
+        }
+        .button {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 20px;
+            background: #d32f2f;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background: #b71c1c;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Máy Sấy Lạnh</h1>
+</header>
+
+<nav class="menu">
+    <ul>
+        <li onclick="toggleMenu()">Giới thiệu ▼
+            <ul class="submenu" id="submenu">
+                <li><a href="#" onclick="showContent('nguon-goc')">Nguồn gốc máy sấy lạnh</a></li>
+                <li><a href="#" onclick="showContent('chuc-nang')">Chức năng của máy sấy lạnh</a></li>
+                <li><a href="#" onclick="showContent('uu-nhuoc-diem')">Ưu & Nhược điểm</a></li>
+            </ul>
+        </li>
+        <li><a href="#" class="button" onclick="showContent('dong-may-say')">Các Dòng Máy Sấy</a></li>
+        <li><a href="#" class="button" onclick="showContent('lien-he')">Thông Tin Liên Hệ</a></li>
+    </ul>
+</nav>
+
+<!-- Nội dung phần giới thiệu chung -->
+<section id="gioi-thieu" class="content content-section">
+    <h2>Chào mừng bạn đến với trang web về máy sấy lạnh</h2>
+    <p>Chúng tôi chuyên cung cấp thông tin về công nghệ máy sấy lạnh, ưu nhược điểm và các dòng máy sấy trên thị trường.</p>
+</section>
+
+<!-- Nội dung phần Nguồn gốc -->
+<section id="nguon-goc" class="content content-section hidden">
+    <h2>Nguồn Gốc Máy Sấy Lạnh</h2>
+    <p>Máy sấy lạnh ra đời để thay thế công nghệ sấy nhiệt truyền thống, giúp giữ nguyên chất lượng thực phẩm.</p>
+</section>
+
+<!-- Nội dung phần Chức năng -->
+<section id="chuc-nang" class="content content-section hidden">
+    <h2>Chức Năng Của Máy Sấy Lạnh</h2>
+    <p>Máy sấy lạnh giúp sấy khô thực phẩm ở nhiệt độ thấp, giữ được hương vị và dinh dưỡng.</p>
+</section>
+
+<!-- Nội dung phần Ưu Nhược Điểm -->
+<section id="uu-nhuoc-diem" class="content content-section hidden">
+    <h2>Ưu và Nhược Điểm Của Máy Sấy Lạnh</h2>
+    <h3>Ưu điểm:</h3>
+    <ul>
+        <li>Giữ nguyên màu sắc và chất dinh dưỡng.</li>
+        <li>Tiết kiệm điện năng hơn sấy nhiệt.</li>
+    </ul>
+    <h3>Nhược điểm:</h3>
+    <ul>
+        <li>Giá thành cao hơn.</li>
+        <li>Thời gian sấy lâu hơn.</li>
+    </ul>
+</section>
+
+<!-- Nội dung phần Các Dòng Máy Sấy -->
+<section id="dong-may-say" class="content content-section hidden">
+    <h2>Các Dòng Máy Sấy Trên Thị Trường</h2>
+    <img src="may-say-1.jpg" alt="Máy Sấy 1" width="200">
+    <img src="may-say-2.jpg" alt="Máy Sấy 2" width="200">
+    <img src="may-say-3.jpg" alt="Máy Sấy 3" width="200">
+    <p>Chúng tôi cung cấp các loại máy sấy lạnh hiện đại nhất.</p>
+</section>
+
+<!-- Nội dung phần Thông Tin Liên Hệ -->
+<section id="lien-he" class="content content-section hidden">
+    <h2>Thông Tin Liên Hệ</h2>
+    <p><strong>SĐT:</strong> 0968 723 079</p>
+    <p><strong>Email:</strong> contact@maySayLanh.com</p>
+    <p><strong>Địa chỉ:</strong> Số 123, Đường ABC, TP. Hồ Chí Minh</p>
+</section>
+
+<script>
+    function toggleMenu() {
+        var submenu = document.getElementById("submenu");
+        if (submenu.style.display === "block") {
+            submenu.style.display = "none";
+        } else {
+            submenu.style.display = "block";
+        }
+    }
+
+    function showContent(sectionId) {
+        var sections = document.querySelectorAll('.content-section');
+        sections.forEach(section => section.classList.add('hidden'));
+
+        document.getElementById(sectionId).classList.remove('hidden');
+    }
+</script>
+
+</body>
+</html>
